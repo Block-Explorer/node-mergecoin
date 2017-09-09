@@ -1,12 +1,13 @@
 {
   "name": "node-chaincoin",
   "description": "Communicate with chaincoind via JSON-RPC",
-  "version": "0.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "keywords": [
     "chaincoin",
     "rpc"
   ],
+  "license": "MIT",
   "contributors": [
     {
       "name": "Lucas Buzzo",
