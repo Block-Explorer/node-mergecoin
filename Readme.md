@@ -24,9 +24,9 @@ client.masternodelist(function(err, list) {
 
 ### Get the number of actives masternodes
 ```js
-client.masternode('count', function(err, list) {
+client.masternode('count', function(err, count) {
   if (err) return console.log(err);
-  console.log('Masternodes List:', list);
+  console.log('Masternodes :', count);
 });
 ```
 
