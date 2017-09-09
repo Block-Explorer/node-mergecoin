@@ -1,7 +1,8 @@
 {
   "name": "node-chaincoin",
-  "description": "ode-chaincoin is a simple wrapper for the chaincoin client's JSON-RPC API.",
-  "version": "1.0.1",
+  "description": "Communicate with chaincoind via JSON-RPC",
+  "version": "0.0.1",
+  "main": "lib/index.js",
   "keywords": [
     "chaincoin",
     "rpc"
@@ -11,16 +12,18 @@
       "name": "Lucas Buzzo",
       "email": "lcsbzo@gmail.com",
       "web": ""
-    }
-  ],
-  "demos": [
-    "test.js",
-    "test2.js"
-  ],
-  "repositories": [
+    },
     {
-      "type": "git",
-      "url": "https://github.com/lubuzzo/chaincoin-node-api.git"
+      "name": "Alan Rudolf",
+      "email": "@suprnurd",
+      "web": "@suprnurd"
     }
-  ]
+  ],
+  "dependencies": {
+    "deprecate": "~0.1.0"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/suprnurd/chaincoin-node-api.git"
+  }
 }
