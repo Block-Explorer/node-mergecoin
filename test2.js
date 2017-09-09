@@ -8,7 +8,7 @@ var client = new chaincoin.Client({
   pass: settings.pass
 });
 
-client.masternode('count', function(err, count){
+client.masternodelist(function(err, list){
   if (err) return console.log(err);
-  console.log('Masternodes count:', count);
+  console.log('Masternodes List:', list);
 });

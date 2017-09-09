@@ -1,21 +1,26 @@
 {
-  "name": "node-darkcoin",
-  "description": "Communicate with darkcoind via JSON-RPC",
-  "version": "1.0.3",
-  "main": "lib/index.js",
+  "name": "node-chaincoin",
+  "description": "ode-chaincoin is a simple wrapper for the chaincoin client's JSON-RPC API.",
+  "version": "1.0.1",
   "keywords": [
-    "darkcoin",
+    "chaincoin",
     "rpc"
   ],
-  "author": "Dumitru Glavan <contact@dumitruglavan.com>",
-  "dependencies": {
-    "deprecate": "~0.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/doomhz/node-darkcoin.git"
-  },
-  "engines": {
-    "node": ">= 0.8.0"
-  }
+  "contributors": [
+    {
+      "name": "Lucas Buzzo",
+      "email": "lcsbzo@gmail.com",
+      "web": ""
+    }
+  ],
+  "demos": [
+    "test.js",
+    "test2.js"
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/lubuzzo/chaincoin-node-api.git"
+    }
+  ]
 }
