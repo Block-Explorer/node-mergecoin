@@ -1,19 +1,16 @@
 {
-  "name": "node-darkcoin",
-  "description": "Communicate with darkcoind via JSON-RPC",
-  "version": "1.0.3",
+  "name": "node-chaincoin",
+  "description": "Communicate with ChainCoin via JSON-RPC",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "keywords": [
-    "darkcoin",
+    "chaincoin",
     "rpc"
   ],
-  "author": "Dumitru Glavan <contact@dumitruglavan.com>",
-  "dependencies": {
-    "deprecate": "~0.1.0"
-  },
+  "author": "Lucas Buzzo <lcsbzo@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/doomhz/node-darkcoin.git"
+    "url": "git://github.com/lubuzzo/chaincoin-node-api.git"
   },
   "engines": {
     "node": ">= 0.8.0"
