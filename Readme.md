@@ -5,24 +5,44 @@ node-chaincoin is a simple wrapper for the chaincoin client's JSON-RPC API.
 
 `npm install node-chaincoin`
 
-## Start
-1. Rename the settings-example.json to settings.json
-2. Update the settings.json (renamed in the previous step) with the ip, port, user e pass
-3. Run the command `node test.js` (this script will show the number of actives masternodes)
-4. Run the command `nodes test2.js` (this script will list all the masternodes actives)
-
 ## Examples
 
-### Get the Masternode List
+### Create client
+```js
+var client = new chaincoin.Client({
+  host: 'localhost',
+  port: 11995,
+  user: 'rpcuser',
+  pass: 'rpcpassword'
+});
+```
+
+### Get balance across all accounts with minimum confirmations of 6
+```js
+client.getBalance('*', 6, function(err, balance) {
+  if (err) return console.log(err);
+  console.log('Balance:', balance);
+});
+```
+
+### Getting the balance directly using `cmd`
+```js
+client.cmd('getbalance', '*', 6, function(err, balance){
+  if (err) return console.log(err);
+  console.log('Balance:', balance);
+});
+```
+
+### Get the master node List
 
 ```js
-client.masternodelist(function(err, list) {
+client.masternode('count', function(err, list) {
   if (err) return console.log(err);
   console.log('Masternodes List:', list);
 });
 ```
 
-### Get the number of actives masternodes
+### Get the number master node count
 ```js
 client.masternode('count', function(err, count) {
   if (err) return console.log(err);
@@ -62,7 +82,7 @@ to your own chaincoind.
 ```js
 var client = new chaincoin.Client({
   host: 'localhost',
-  port: 15715,
+  port: 11995,
   user: 'username',
   pass: 'password',
   ssl: true,
@@ -71,9 +91,9 @@ var client = new chaincoin.Client({
 });
 ```
 
-If your using a self signed certificate generated with something like
+If you're using a self signed certificate generated with something like 
 
 `openssl x509 -req -days 365 -in server.cert -signkey server.key -out server.cert`
 
-then `sslStrict` should be set to `false` because by defult node wont work with
-untrusted certificates.
+then `sslStrict` should be set to `false` because by defult node wont work with 
+untrusted certificates. 
