@@ -36,13 +36,13 @@ client.cmd('getbalance', '*', 6, function(err, balance){
 ### Get the master node List
 
 ```js
-client.masternode('count', function(err, list) {
+client.masternode('list', function(err, list) {
   if (err) return console.log(err);
   console.log('Masternodes List:', list);
 });
 ```
 
-### Get the number master node count
+### Get the master node count
 ```js
 client.masternode('count', function(err, count) {
   if (err) return console.log(err);
@@ -50,7 +50,7 @@ client.masternode('count', function(err, count) {
 });
 ```
 
-### Batch multiple RPC calls into single HTTP request
+### Batch multiple RPC calls into a single HTTP request
 
 ```js
 var batch = [];
@@ -83,8 +83,8 @@ to your own chaincoind.
 var client = new chaincoin.Client({
   host: 'localhost',
   port: 11995,
-  user: 'username',
-  pass: 'password',
+  user: 'rpcuser',
+  pass: 'rpcpassword',
   ssl: true,
   sslStrict: true,
   sslCa: fs.readFileSync(__dirname + '/server.cert')
