@@ -1,14 +1,19 @@
 {
-  "name": "node-chaincoin",
-  "description": "Communicate with chaincoind via JSON-RPC",
-  "version": "1.0.3",
+  "name": "node-mergecoin",
+  "description": "Communicate with mergecoind via JSON-RPC",
+  "version": "1.0.5",
   "main": "lib/index.js",
   "keywords": [
-    "chaincoin",
+    "mergecoin",
     "rpc"
   ],
   "license": "MIT",
   "contributors": [
+    {
+      "name": "Sascha Krumbach",
+      "email": "contact@projectmerge.org",
+      "web": "projectmerge.org"
+    },
     {
       "name": "Lucas Buzzo",
       "email": "lcsbzo@gmail.com",
@@ -21,10 +26,10 @@
     }
   ],
   "dependencies": {
-    "deprecate": "~0.1.0"
+    "deprecate": "~1.1.0"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/suprnurd/chaincoin-node-api.git"
+    "type": "git",
+    "url": "https://github.com/Block-Explorer/node-mergecoin"
   }
 }

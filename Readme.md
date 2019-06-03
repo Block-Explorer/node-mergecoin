@@ -1,15 +1,15 @@
-# node-chaincoin
+# node-mergecoin
 
-node-chaincoin is a simple wrapper for the chaincoin client's JSON-RPC API.
+node-mergecoin is a simple wrapper for the mergecoin client's JSON-RPC API.
 ## Install
 
-`npm install node-chaincoin`
+`npm install node-mergecoin`
 
 ## Examples
 
 ### Create client
 ```js
-var client = new chaincoin.Client({
+var client = new mergecoin.Client({
   host: 'localhost',
   port: 11995,
   user: 'rpcuser',
@@ -35,6 +35,7 @@ client.cmd('getbalance', '*', 6, function(err, balance){
 
 ### Get the master node List
 
+OLD!
 ```js
 client.masternode('list', function(err, list) {
   if (err) return console.log(err);
@@ -42,11 +43,29 @@ client.masternode('list', function(err, list) {
 });
 ```
 
+NEW!
+```js
+client.listMasternodes(function(err, nodes){
+  if (err) return console.log(err);
+  console.log(nodes);
+});
+```
+
 ### Get the master node count
+
+OLD!
 ```js
 client.masternode('count', function(err, count) {
   if (err) return console.log(err);
   console.log('Masternodes :', count);
+});
+```
+
+NEW
+```js
+client.getMasternodeCount(function(err, count){
+  if (err) return console.log(err);
+  console.log(count);
 });
 ```
 
@@ -69,22 +88,22 @@ client.cmd(batch, function(err, address) {
 ## SSL
 See [Enabling SSL on original client](https://en.bitcoin.it/wiki/Enabling_SSL_on_original_client_daemon).
 
-If you're using this to connect to chaincoin across a network it is highly
+If you're using this to connect to mergecoin across a network it is highly
 recommended to enable `ssl`, otherwise an attacker may intercept your RPC credentials
-resulting in theft of your chaincoin.
+resulting in theft of your mergecoin.
 
 When enabling `ssl` by setting the configuration option to `true`, the `sslStrict`
 option (verifies the server certificate) will also be enabled by default. It is
-highly recommended to specify the `sslCa` as well, even if your chaincoind has
+highly recommended to specify the `sslCa` as well, even if your mergecoind has
 a certificate signed by an actual CA, to ensure you are connecting
-to your own chaincoind.
+to your own mergecoind.
 
 ```js
-var client = new chaincoin.Client({
+var client = new mergecoin.Client({
   host: 'localhost',
-  port: 11995,
+  port: '51473',
   user: 'rpcuser',
-  pass: 'rpcpassword',
+  pass: 'rpcpassword'
   ssl: true,
   sslStrict: true,
   sslCa: fs.readFileSync(__dirname + '/server.cert')

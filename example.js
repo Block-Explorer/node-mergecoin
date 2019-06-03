@@ -1,8 +1,8 @@
-var chaincoin = require('./lib');    
+var mergecoin = require('./lib');    
 
-var client = new chaincoin.Client({
+var client = new mergecoin.Client({
   host: 'localhost',
-  port: '11995',
+  port: '51473',
   user: 'rpcuser',
   pass: 'rpcpassword'
 });
@@ -19,17 +19,14 @@ client.cmd('getbalance', '*', 6, function(err, balance){
 
 console.log('Master node info:');
 
-client.masternode('list', 'activeseconds', '45.63.18.110', function(err, activeseconds){
+client.listMasternodes(function(err, nodes){
   if (err) return console.log(err);
-  console.log(activeseconds);
+  console.log(nodes);
 });
 
-client.masternode('count', function(err, count){
+
+client.getMasternodeCount(function(err, count){
   if (err) return console.log(err);
   console.log(count);
 });
 
-/*client.masternode('list', function(err, list){
-  if (err) return console.log(err);
-  console.log(list);
-});*/
